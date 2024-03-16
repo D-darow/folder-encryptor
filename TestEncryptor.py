@@ -21,6 +21,16 @@ class TestEncryptor(unittest.TestCase):
         self.assertEqual(key, b'|\x8c_\x0c\xc1\xed\x9by\xc5\xf1}D\xda\xf5[\xa5\xd60\x8bv\x8a\xbeL\xb4'
                               b'\x19%\x8f\x9eP\xdaK\xa4')
 
+    def testOneFileEncryption(self):
+        file, file_encrypted = 0, 0
+        key = Encryptor.generate_aes_key('123'.encode(), b'ECGcProLV1ikU3LPLdNfBQ==')
+        with open('test/test.txt', 'rb') as f:
+            file = f.read()
+        Encryptor.encrypt_aes(os.path.abspath('test/test.txt'), key)
+        with open('test/test.txt', 'rb') as f:
+            file_encrypted = f.read()
+        self.assertNotEqual(file, file_encrypted)
+
 
 if __name__ == '__main__':
     unittest.main()
