@@ -41,3 +41,24 @@ class Encryptor:
         # Сохранение IV вместе с зашифрованными данными
         with open(file_path, 'wb') as f:
             f.write(iv + ciphertext)
+
+    @staticmethod
+    def decrypt_aes(file_path, key):
+        with open(file_path, 'rb') as f:
+            iv_with_ciphertext = f.read()
+
+        # Извлечение IV и зашифрованных данных
+        iv = iv_with_ciphertext[:16]
+        ciphertext = iv_with_ciphertext[16:]
+
+        backend = default_backend()
+        cipher = Cipher(algorithms.AES(key), modes.CBC(iv), backend=backend)
+        decryptor = cipher.decryptor()
+
+        decrypted_data = decryptor.update(ciphertext) + decryptor.finalize()
+
+        unpadder = padding.PKCS7(128).unpadder()
+        unpadded_data = unpadder.update(decrypted_data) + unpadder.finalize()
+
+        with open(file_path, 'wb') as f:
+            f.write(unpadded_data)

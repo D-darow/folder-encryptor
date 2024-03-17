@@ -31,6 +31,17 @@ class TestEncryptor(unittest.TestCase):
             file_encrypted = f.read()
         self.assertNotEqual(file, file_encrypted)
 
+    def testOneFileEncryptionAndDecryption(self):
+        file_before_encryption, file_after_encryption = 0, 0
+        key = Encryptor.generate_aes_key('123'.encode(), b'ECGcProLV1ikU3LPLdNfBQ==')
+        with open('test/test2.txt', 'rb') as f:
+            file_before_encryption = f.read()
+        Encryptor.encrypt_aes(os.path.abspath('test/test2.txt'), key)
+        Encryptor.decrypt_aes(os.path.abspath('test/test2.txt'), key)
+        with open('test/test2.txt', 'rb') as f:
+            file_after_encryption = f.read()
+        self.assertEqual(file_before_encryption, file_after_encryption)
+
 
 if __name__ == '__main__':
     unittest.main()

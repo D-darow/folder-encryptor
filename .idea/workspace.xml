@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5730e2e0-9d1d-4be1-a78a-6820ef845ccc" name="Changes" comment="Added trivial encrypt_aes() implementation and test for this method. All tests passed. Also added folder 'test' for testing encryption.">
+    <list default="true" id="5730e2e0-9d1d-4be1-a78a-6820ef845ccc" name="Changes" comment="Finished encrypt_aes(). All tests passed.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Encryptor.py" beforeDir="false" afterPath="$PROJECT_DIR$/Encryptor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestEncryptor.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestEncryptor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +63,7 @@
     "Python tests.Python tests for TestEncryptor.TestEncryptor.testGenerateAesKeyWithSaltAndKeyMaterial.executor": "Run",
     "Python tests.Python tests for TestEncryptor.TestEncryptor.testGenerateAesKeyWithSaltAndKeyMaterial2.executor": "Run",
     "Python tests.Python tests for TestEncryptor.TestEncryptor.testOneFileEncryption.executor": "Run",
+    "Python tests.Python tests for TestEncryptor.TestEncryptor.testOneFileEncryptionAndDecryption.executor": "Run",
     "Python tests.Python tests in TestEncryptor.py.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -70,21 +73,6 @@
   }
 }]]></component>
   <component name="RunManager" selected="Python tests.Python tests in TestEncryptor.py">
-    <configuration name="Python tests for TestEncryptor.TestEncryptor.testGenerateAesKey" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="FolderEncryptor" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;TestEncryptor.TestEncryptor.testGenerateAesKey&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="Python tests for TestEncryptor.TestEncryptor.testGenerateAesKeyWithSaltAndKeyMaterial" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="FolderEncryptor" />
       <option name="ENV_FILES" value="" />
@@ -130,6 +118,21 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests for TestEncryptor.TestEncryptor.testOneFileEncryptionAndDecryption" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="FolderEncryptor" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;TestEncryptor.TestEncryptor.testOneFileEncryptionAndDecryption&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="Python tests in TestEncryptor.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="FolderEncryptor" />
       <option name="ENV_FILES" value="" />
@@ -148,10 +151,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python tests.Python tests in TestEncryptor.py" />
+        <item itemvalue="Python tests.Python tests for TestEncryptor.TestEncryptor.testOneFileEncryptionAndDecryption" />
         <item itemvalue="Python tests.Python tests for TestEncryptor.TestEncryptor.testOneFileEncryption" />
         <item itemvalue="Python tests.Python tests for TestEncryptor.TestEncryptor.testGenerateAesKeyWithSaltAndKeyMaterial2" />
         <item itemvalue="Python tests.Python tests for TestEncryptor.TestEncryptor.testGenerateAesKeyWithSaltAndKeyMaterial" />
-        <item itemvalue="Python tests.Python tests for TestEncryptor.TestEncryptor.testGenerateAesKey" />
       </list>
     </recent_temporary>
   </component>
@@ -203,7 +206,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710615092879</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Finished encrypt_aes(). All tests passed.">
+      <option name="closed" value="true" />
+      <created>1710678204920</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1710678204920</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -211,6 +222,7 @@
     <MESSAGE value="Added test and trivial implementation for generate_aes_key() method." />
     <MESSAGE value="Added final implementation for generate_aes_key(). Added 2 tests for generate_aes_key(). All tests passed." />
     <MESSAGE value="Added trivial encrypt_aes() implementation and test for this method. All tests passed. Also added folder 'test' for testing encryption." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added trivial encrypt_aes() implementation and test for this method. All tests passed. Also added folder 'test' for testing encryption." />
+    <MESSAGE value="Finished encrypt_aes(). All tests passed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished encrypt_aes(). All tests passed." />
   </component>
 </project>
