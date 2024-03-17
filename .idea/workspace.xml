@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5730e2e0-9d1d-4be1-a78a-6820ef845ccc" name="Changes" comment="Added final implementation for generate_aes_key(). Added 2 tests for generate_aes_key(). All tests passed. Also changed README.">
+    <list default="true" id="5730e2e0-9d1d-4be1-a78a-6820ef845ccc" name="Changes" comment="Added trivial encrypt_aes() implementation and test for this method. All tests passed. Also added folder 'test' for testing encryption.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Encryptor.py" beforeDir="false" afterPath="$PROJECT_DIR$/Encryptor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestEncryptor.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestEncryptor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +69,7 @@
     "settings.editor.selected.configurable": "proofread"
   }
 }]]></component>
-  <component name="RunManager" selected="Python tests.Python tests for TestEncryptor.TestEncryptor.testOneFileEncryption">
+  <component name="RunManager" selected="Python tests.Python tests in TestEncryptor.py">
     <configuration name="Python tests for TestEncryptor.TestEncryptor.testGenerateAesKey" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="FolderEncryptor" />
       <option name="ENV_FILES" value="" />
@@ -148,8 +147,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for TestEncryptor.TestEncryptor.testOneFileEncryption" />
         <item itemvalue="Python tests.Python tests in TestEncryptor.py" />
+        <item itemvalue="Python tests.Python tests for TestEncryptor.TestEncryptor.testOneFileEncryption" />
         <item itemvalue="Python tests.Python tests for TestEncryptor.TestEncryptor.testGenerateAesKeyWithSaltAndKeyMaterial2" />
         <item itemvalue="Python tests.Python tests for TestEncryptor.TestEncryptor.testGenerateAesKeyWithSaltAndKeyMaterial" />
         <item itemvalue="Python tests.Python tests for TestEncryptor.TestEncryptor.testGenerateAesKey" />
@@ -196,13 +195,22 @@
       <option name="project" value="LOCAL" />
       <updated>1710600222871</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added trivial encrypt_aes() implementation and test for this method. All tests passed. Also added folder 'test' for testing encryption.">
+      <option name="closed" value="true" />
+      <created>1710615092879</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1710615092879</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit. Added classes TestEncryptor and Encryptor." />
     <MESSAGE value="Added test and trivial implementation for generate_aes_key() method." />
     <MESSAGE value="Added final implementation for generate_aes_key(). Added 2 tests for generate_aes_key(). All tests passed." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added final implementation for generate_aes_key(). Added 2 tests for generate_aes_key(). All tests passed." />
+    <MESSAGE value="Added trivial encrypt_aes() implementation and test for this method. All tests passed. Also added folder 'test' for testing encryption." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added trivial encrypt_aes() implementation and test for this method. All tests passed. Also added folder 'test' for testing encryption." />
   </component>
 </project>
