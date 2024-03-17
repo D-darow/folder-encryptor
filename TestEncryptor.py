@@ -34,6 +34,7 @@ class TestEncryptor(unittest.TestCase):
     def testOneFileEncryptionAndDecryption(self):
         file_before_encryption, file_after_encryption = 0, 0
         key = Encryptor.generate_aes_key('123'.encode(), b'ECGcProLV1ikU3LPLdNfBQ==')
+        print(key)
         with open('test/test2.txt', 'rb') as f:
             file_before_encryption = f.read()
         Encryptor.encrypt_aes(os.path.abspath('test/test2.txt'), key)
@@ -41,6 +42,26 @@ class TestEncryptor(unittest.TestCase):
         with open('test/test2.txt', 'rb') as f:
             file_after_encryption = f.read()
         self.assertEqual(file_before_encryption, file_after_encryption)
+
+    def testFolderEncryptionDecryption(self):
+        encryptor = Encryptor()
+        files_before_encryption, files_after_decryption = [], []
+        key = Encryptor.generate_aes_key('123'.encode(), os.urandom(16))
+        for root, dirs, files in os.walk('test_folder/'):
+            for file in files:
+                file_path = os.path.join(root, file)
+                with open(file_path, 'rb') as f:
+                    single_file = f.read()
+                    files_before_encryption.append(single_file)
+        encryptor.encrypt_folder('test_folder/', key)
+        encryptor.decrypt_folder('test_folder/', key)
+        for root, dirs, files in os.walk('test_folder/'):
+            for file in files:
+                file_path = os.path.join(root, file)
+                with open(file_path, 'rb') as f:
+                    single_file = f.read()
+                    files_after_decryption.append(single_file)
+        self.assertEqual(files_before_encryption, files_after_decryption)
 
 
 if __name__ == '__main__':

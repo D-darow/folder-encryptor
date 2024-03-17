@@ -62,3 +62,15 @@ class Encryptor:
 
         with open(file_path, 'wb') as f:
             f.write(unpadded_data)
+
+    def encrypt_folder(self, folder_path, key):
+        for root, dirs, files in os.walk(folder_path):
+            for file in files:
+                file_path = os.path.join(root, file)
+                self.encrypt_aes(file_path, key)
+
+    def decrypt_folder(self, folder_path, key):
+        for root, dirs, files in os.walk(folder_path):
+            for file in files:
+                file_path = os.path.join(root, file)
+                self.decrypt_aes(file_path, key)

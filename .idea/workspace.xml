@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5730e2e0-9d1d-4be1-a78a-6820ef845ccc" name="Changes" comment="Finished encrypt_aes(). All tests passed.">
+    <list default="true" id="5730e2e0-9d1d-4be1-a78a-6820ef845ccc" name="Changes" comment="Added decrypt_aes() and test for this method. All tests passed.">
+      <change afterPath="$PROJECT_DIR$/test_folder/test.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_folder/test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Encryptor.py" beforeDir="false" afterPath="$PROJECT_DIR$/Encryptor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestEncryptor.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestEncryptor.py" afterDir="false" />
@@ -48,6 +50,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -59,6 +64,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python tests.Python tests for TestEncryptor.TestEncryptor.testFolderEncryptionDecryption.executor": "Run",
     "Python tests.Python tests for TestEncryptor.TestEncryptor.testGenerateAesKey.executor": "Run",
     "Python tests.Python tests for TestEncryptor.TestEncryptor.testGenerateAesKeyWithSaltAndKeyMaterial.executor": "Run",
     "Python tests.Python tests for TestEncryptor.TestEncryptor.testGenerateAesKeyWithSaltAndKeyMaterial2.executor": "Run",
@@ -72,8 +78,8 @@
     "settings.editor.selected.configurable": "proofread"
   }
 }]]></component>
-  <component name="RunManager" selected="Python tests.Python tests in TestEncryptor.py">
-    <configuration name="Python tests for TestEncryptor.TestEncryptor.testGenerateAesKeyWithSaltAndKeyMaterial" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Python tests for TestEncryptor.TestEncryptor.testFolderEncryptionDecryption">
+    <configuration name="Python tests for TestEncryptor.TestEncryptor.testFolderEncryptionDecryption" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="FolderEncryptor" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -84,7 +90,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;TestEncryptor.TestEncryptor.testGenerateAesKeyWithSaltAndKeyMaterial&quot;" />
+      <option name="_new_target" value="&quot;TestEncryptor.TestEncryptor.testFolderEncryptionDecryption&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -150,11 +156,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests in TestEncryptor.py" />
+        <item itemvalue="Python tests.Python tests for TestEncryptor.TestEncryptor.testFolderEncryptionDecryption" />
         <item itemvalue="Python tests.Python tests for TestEncryptor.TestEncryptor.testOneFileEncryptionAndDecryption" />
+        <item itemvalue="Python tests.Python tests in TestEncryptor.py" />
         <item itemvalue="Python tests.Python tests for TestEncryptor.TestEncryptor.testOneFileEncryption" />
         <item itemvalue="Python tests.Python tests for TestEncryptor.TestEncryptor.testGenerateAesKeyWithSaltAndKeyMaterial2" />
-        <item itemvalue="Python tests.Python tests for TestEncryptor.TestEncryptor.testGenerateAesKeyWithSaltAndKeyMaterial" />
       </list>
     </recent_temporary>
   </component>
@@ -214,7 +220,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710678204920</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added decrypt_aes() and test for this method. All tests passed.">
+      <option name="closed" value="true" />
+      <created>1710679688664</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1710679688664</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -223,6 +237,7 @@
     <MESSAGE value="Added final implementation for generate_aes_key(). Added 2 tests for generate_aes_key(). All tests passed." />
     <MESSAGE value="Added trivial encrypt_aes() implementation and test for this method. All tests passed. Also added folder 'test' for testing encryption." />
     <MESSAGE value="Finished encrypt_aes(). All tests passed." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished encrypt_aes(). All tests passed." />
+    <MESSAGE value="Added decrypt_aes() and test for this method. All tests passed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added decrypt_aes() and test for this method. All tests passed." />
   </component>
 </project>
