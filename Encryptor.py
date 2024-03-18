@@ -4,6 +4,8 @@ from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 from cryptography.hazmat.backends import default_backend
+from Crypto.Cipher import Blowfish
+from Crypto.Protocol.KDF import scrypt
 
 
 class Encryptor:
@@ -21,6 +23,10 @@ class Encryptor:
             backend=default_backend()
         )
         return kdf.derive(password)
+
+    @staticmethod
+    def generate_blowfish_key(password, salt):
+        return scrypt(password, salt, 32, N=2 ** 14, r=8, p=1)
 
     @staticmethod
     def encrypt_aes(file_path, key):

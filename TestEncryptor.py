@@ -12,6 +12,10 @@ class TestEncryptor(unittest.TestCase):
         key = Encryptor.generate_aes_key('123'.encode(), os.urandom(16))
         self.assertEqual(32, len(key))
 
+    def testGenerateBlowfishKey(self):
+        key = Encryptor.generate_blowfish_key('123'.encode(), os.urandom(16))
+        self.assertEqual(32, len(key))
+
     def testGenerateAesKeyWithSaltAndKeyMaterial(self):
         key = Encryptor.generate_aes_key('123'.encode(), b'ECGcProLV1ikU3LPLdNfBQ==')
         self.assertEqual(key, b'9\x9b\xc3qri\xd5\xe4\xbfq\x8a\xccA\x94\xe75o\x7f\x8f5\xec\xae<\x1d\x8a0N9'b'\xbf\xa6^+')
@@ -20,6 +24,11 @@ class TestEncryptor(unittest.TestCase):
         key = Encryptor.generate_aes_key('321'.encode(), b'\x8f\xaaC\xcf-\x8e8D\xf4ND\xfc\xdf3\xc0d')
         self.assertEqual(key, b'|\x8c_\x0c\xc1\xed\x9by\xc5\xf1}D\xda\xf5[\xa5\xd60\x8bv\x8a\xbeL\xb4'
                               b'\x19%\x8f\x9eP\xdaK\xa4')
+
+    def testGenerateBlowfishKeyWithSaltAndKeyMaterial(self):
+        key = Encryptor.generate_blowfish_key('123'.encode(), b'ECGcProLV1ikU3LPLdNfBQ==')
+        self.assertEqual(key, b'\xaa\x88\xbd{\xdf+\x11`5?\x0cL\xd3U\xca\x1f\xe2\x99\xb00V\xed\xde>'
+                              b'\xc0\x0fJ\x8e\x99\x1bj"')
 
     def testOneFileEncryption(self):
         file, file_encrypted = 0, 0
@@ -34,7 +43,6 @@ class TestEncryptor(unittest.TestCase):
     def testOneFileEncryptionAndDecryption(self):
         file_before_encryption, file_after_encryption = 0, 0
         key = Encryptor.generate_aes_key('123'.encode(), b'ECGcProLV1ikU3LPLdNfBQ==')
-        print(key)
         with open('test/test2.txt', 'rb') as f:
             file_before_encryption = f.read()
         Encryptor.encrypt_aes(os.path.abspath('test/test2.txt'), key)
