@@ -82,8 +82,8 @@ class TestEncryptor(unittest.TestCase):
                 with open(file_path, 'rb') as f:
                     single_file = f.read()
                     files_before_encryption.append(single_file)
-        encryptor.encrypt_folder('test_folder/', key)
-        encryptor.decrypt_folder('test_folder/', key)
+        encryptor.encrypt_folder('test_folder/', 'aes', key)
+        encryptor.decrypt_folder('test_folder/', 'aes', key)
         for root, dirs, files in os.walk('test_folder/'):
             for file in files:
                 file_path = os.path.join(root, file)
@@ -91,6 +91,40 @@ class TestEncryptor(unittest.TestCase):
                     single_file = f.read()
                     files_after_decryption.append(single_file)
         self.assertEqual(files_before_encryption, files_after_decryption)
+
+    def testFolderEncryptionDecryptionBlowfish(self):
+        encryptor = Encryptor()
+        files_before_encryption, files_after_decryption = [], []
+        key = Encryptor.generate_blowfish_key('123'.encode(), os.urandom(16))
+        for root, dirs, files in os.walk('blowfish_folder/'):
+            for file in files:
+                file_path = os.path.join(root, file)
+                with open(file_path, 'rb') as f:
+                    single_file = f.read()
+                    files_before_encryption.append(single_file)
+        encryptor.encrypt_folder('blowfish_folder/', 'blowfish', key)
+        encryptor.decrypt_folder('blowfish_folder/', 'blowfish', key)
+        for root, dirs, files in os.walk('blowfish_folder/'):
+            for file in files:
+                file_path = os.path.join(root, file)
+                with open(file_path, 'rb') as f:
+                    single_file = f.read()
+                    files_after_decryption.append(single_file)
+        self.assertEqual(files_before_encryption, files_after_decryption)
+
+    def testFolderEncryptionUnsupportedMethod(self):
+        encryptor = Encryptor()
+        with self.assertRaisesRegex(Exception, "Unsupported encryption method"):
+            encryptor.encrypt_folder('test_folder/', 'assaas',
+                                     b'\xaa\x88\xbd{\xdf+\x11`5?\x0cL\xd3U\xca\x1f\xe2\x99\xb00V\xed\xde>'
+                                     b'\xc0\x0fJ\x8e\x99\x1bj"')
+
+    def testFolderDecryptionUnsupportedMethod(self):
+        encryptor = Encryptor()
+        with self.assertRaisesRegex(Exception, "Unsupported decryption method"):
+            encryptor.decrypt_folder('test_folder/', 'assaas',
+                                     b'\xaa\x88\xbd{\xdf+\x11`5?\x0cL\xd3U\xca\x1f\xe2\x99\xb00V\xed\xde>'
+                                     b'\xc0\x0fJ\x8e\x99\x1bj"')
 
 
 if __name__ == '__main__':

@@ -95,14 +95,24 @@ class Encryptor:
         with open(file_path, 'wb') as f:
             f.write(unpadded_data)
 
-    def encrypt_folder(self, folder_path, key):
+    def encrypt_folder(self, folder_path, method, key):
         for root, dirs, files in os.walk(folder_path):
             for file in files:
                 file_path = os.path.join(root, file)
-                self.encrypt_aes(file_path, key)
+                if method == 'aes':
+                    self.encrypt_aes(file_path, key)
+                elif method == 'blowfish':
+                    self.encrypt_blowfish(file_path, key)
+                else:
+                    raise Exception("Unsupported encryption method")
 
-    def decrypt_folder(self, folder_path, key):
+    def decrypt_folder(self, folder_path, method, key):
         for root, dirs, files in os.walk(folder_path):
             for file in files:
                 file_path = os.path.join(root, file)
-                self.decrypt_aes(file_path, key)
+                if method == 'aes':
+                    self.decrypt_aes(file_path, key)
+                elif method == 'blowfish':
+                    self.decrypt_blowfish(file_path, key)
+                else:
+                    raise Exception("Unsupported decryption method")

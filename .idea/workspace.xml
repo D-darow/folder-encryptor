@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5730e2e0-9d1d-4be1-a78a-6820ef845ccc" name="Changes" comment="Added generate_blowfish_key() and tests for this method. All tests passed">
-      <change afterPath="$PROJECT_DIR$/test/blowfish.txt" afterDir="false" />
+    <list default="true" id="5730e2e0-9d1d-4be1-a78a-6820ef845ccc" name="Changes" comment="Added encrypt_blowfish() and decrypt_blowfish(). Added tests for encrypt_blowfish() and decrypt_blowfish(). All tests passed.">
+      <change afterPath="$PROJECT_DIR$/blowfish_folder/test.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blowfish_folder/test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Encryptor.py" beforeDir="false" afterPath="$PROJECT_DIR$/Encryptor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestEncryptor.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestEncryptor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/blowfish.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/blowfish.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,6 +66,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python tests.Python tests for TestEncryptor.TestEncryptor.testFolderEncryptionDecryption.executor": "Run",
+    "Python tests.Python tests for TestEncryptor.TestEncryptor.testFolderEncryptionUnsupportedMethod.executor": "Run",
     "Python tests.Python tests for TestEncryptor.TestEncryptor.testGenerateAesKey.executor": "Run",
     "Python tests.Python tests for TestEncryptor.TestEncryptor.testGenerateAesKeyWithSaltAndKeyMaterial.executor": "Run",
     "Python tests.Python tests for TestEncryptor.TestEncryptor.testGenerateAesKeyWithSaltAndKeyMaterial2.executor": "Run",
@@ -81,8 +84,8 @@
     "settings.editor.selected.configurable": "proofread"
   }
 }]]></component>
-  <component name="RunManager" selected="Python tests.Python tests for TestEncryptor.TestEncryptor.testOneFileBlowfishEncryptionAndDecryption">
-    <configuration name="Python tests for TestEncryptor.TestEncryptor.testGenerateBlowfishKeyWithSaltAndKeyMaterial" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Python tests in TestEncryptor.py">
+    <configuration name="Python tests for TestEncryptor.TestEncryptor.testFolderEncryptionUnsupportedMethod" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="FolderEncryptor" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -93,7 +96,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;TestEncryptor.TestEncryptor.testGenerateBlowfishKeyWithSaltAndKeyMaterial&quot;" />
+      <option name="_new_target" value="&quot;TestEncryptor.TestEncryptor.testFolderEncryptionUnsupportedMethod&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -159,11 +162,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests in TestEncryptor.py" />
+        <item itemvalue="Python tests.Python tests for TestEncryptor.TestEncryptor.testFolderEncryptionUnsupportedMethod" />
         <item itemvalue="Python tests.Python tests for TestEncryptor.TestEncryptor.testOneFileBlowfishEncryptionAndDecryption" />
         <item itemvalue="Python tests.Python tests for TestEncryptor.TestEncryptor.testOneFileEncryptionAndDecryption" />
-        <item itemvalue="Python tests.Python tests in TestEncryptor.py" />
         <item itemvalue="Python tests.Python tests for TestEncryptor.TestEncryptor.testOneFileBlowfishEncryption" />
-        <item itemvalue="Python tests.Python tests for TestEncryptor.TestEncryptor.testGenerateBlowfishKeyWithSaltAndKeyMaterial" />
       </list>
     </recent_temporary>
   </component>
@@ -247,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710753970527</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added encrypt_blowfish() and decrypt_blowfish(). Added tests for encrypt_blowfish() and decrypt_blowfish(). All tests passed.">
+      <option name="closed" value="true" />
+      <created>1710758192006</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1710758192006</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -259,6 +270,7 @@
     <MESSAGE value="Added decrypt_aes() and test for this method. All tests passed." />
     <MESSAGE value="Added test for folder encryption/decryption. Added encrypt_folder() and decrypt_folder() methods. All tests passed." />
     <MESSAGE value="Added generate_blowfish_key() and tests for this method. All tests passed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added generate_blowfish_key() and tests for this method. All tests passed" />
+    <MESSAGE value="Added encrypt_blowfish() and decrypt_blowfish(). Added tests for encrypt_blowfish() and decrypt_blowfish(). All tests passed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added encrypt_blowfish() and decrypt_blowfish(). Added tests for encrypt_blowfish() and decrypt_blowfish(). All tests passed." />
   </component>
 </project>
