@@ -49,6 +49,18 @@ class Encryptor:
             f.write(iv + ciphertext)
 
     @staticmethod
+    def encrypt_blowfish(file_path, key):
+        with open(file_path, 'rb') as f:
+            plaintext = f.read()
+
+        blowfish_cipher = Blowfish.new(key, Blowfish.MODE_ECB)
+        padder = padding.PKCS7(128).padder()
+        ciphertext = blowfish_cipher.encrypt(padder.update(plaintext) + padder.finalize())
+
+        with open(file_path, 'wb') as f:
+            f.write(ciphertext)
+
+    @staticmethod
     def decrypt_aes(file_path, key):
         with open(file_path, 'rb') as f:
             iv_with_ciphertext = f.read()
@@ -62,6 +74,20 @@ class Encryptor:
         decryptor = cipher.decryptor()
 
         decrypted_data = decryptor.update(ciphertext) + decryptor.finalize()
+
+        unpadder = padding.PKCS7(128).unpadder()
+        unpadded_data = unpadder.update(decrypted_data) + unpadder.finalize()
+
+        with open(file_path, 'wb') as f:
+            f.write(unpadded_data)
+
+    @staticmethod
+    def decrypt_blowfish(file_path, key):
+        with open(file_path, 'rb') as f:
+            ciphertext = f.read()
+
+        twofish_cipher = Blowfish.new(key, Blowfish.MODE_ECB)
+        decrypted_data = twofish_cipher.decrypt(ciphertext)
 
         unpadder = padding.PKCS7(128).unpadder()
         unpadded_data = unpadder.update(decrypted_data) + unpadder.finalize()
